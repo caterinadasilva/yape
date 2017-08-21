@@ -1,0 +1,20 @@
+/* Carousel Maca*/
+.imgFondo{
+	background-color: white;
+}
+
+.carousel .indicators {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: red;
+}
+
+/* Fin Carousel Maca*/
