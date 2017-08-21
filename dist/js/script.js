@@ -20253,7 +20253,7 @@ if (jQuery) {
   };
 })(jQuery);
 
-// Carousel
+// Carousel Maca
 $(document).ready(function(){
-    $('.carousel').carousel();
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
 });
