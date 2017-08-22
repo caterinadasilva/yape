@@ -9,7 +9,7 @@ gulp.task('script', function() {
 	gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/materialize-css/dist/js/materialize.js', 'assets/js/*.js'])
 		.pipe(concat('script.js'))
 		// carpeta dist
-		.pipe(gulp.dest('dist/js/'));
+		.pipe(gulp.dest('public/js/'));
 });
 
 gulp.task('style', function(){
@@ -17,22 +17,11 @@ gulp.task('style', function(){
 	.pipe(sass().on('error', sass.logError))
 	.pipe(minifyCSS())
 	.pipe(concat('style.min.css'))
-	.pipe(gulp.dest('dist/css/'));
-});
-
-gulp.task('webserver', function(){
-	gulp.src('../yape/')
-		.pipe(webserver({
-			fallback: 'index.html',
-			livereload: true,
-			directoryListing: false,
-			open: true,
-			port: 8080
-		}));
+	.pipe(gulp.dest('public/css/'));
 });
 
 gulp.task('watch', function(){
 	gulp.watch('assets/sass/*.scss', ['style']);
 });
 
-gulp.task('default', ['script', 'style', 'webserver', 'watch']);
+gulp.task('default', ['script', 'style', 'watch']);
