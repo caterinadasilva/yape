@@ -1,3 +1,8 @@
+*{
+	padding: 0;
+	margin:0;
+}
+
 .formulario{
 	padding: 5px, 0px;
 	span{
@@ -11,7 +16,14 @@
     text-align: center;
     padding-top:0px;
 	}
-}
 
+.btn{
+	background-color:#fbd43b;
+ }
+
+ .btn:hover{
+ 	background-color: #8f8f8f;
+ }
+}
 
 
