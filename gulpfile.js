@@ -2,8 +2,7 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	sass = require('gulp-sass'),
-	minifyCSS = require('gulp-minify-css'),
-	webserver = require('gulp-webserver');
+	minifyCSS = require('gulp-minify-css');
 
 gulp.task('script', function() {
 	gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/materialize-css/dist/js/materialize.js', 'assets/js/*.js'])
