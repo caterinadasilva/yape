@@ -1,6 +1,5 @@
 /* Carousel Maca*/
 .imgFondo{
-	background-color: white;
 }
 
 .carousel .indicators {
@@ -24,3 +23,31 @@
 	background-color: #fbd43b;
 	width: 300px;
 }
+
+/* textos angela*/
+.carousel{
+    height: 570px !important;
+}
+
+.indicators{
+    top: 510px;
+}
+
+.carousel .indicators .indicator-item {
+    background-color: rgba(silver, 0.5);
+}
+
+.textos{
+    color: black;
+    font-size: 10px;
+
+    h2{
+       font-weight: bolder; 
+    }
+
+    p{
+        font-size: 10px;
+    }
+}
+
+
