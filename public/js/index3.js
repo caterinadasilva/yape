@@ -19,6 +19,15 @@ $(document).ready(function() {
     $('#numero').html(telefono);    
     Reenviar();
     Disparar();
+
+    $('#code_input').on("focus", function(){
+        $('#code_input').unbind('keyup change input paste').bind('keyup change input paste',function(e){
+            var codigo = localStorage.getItem("codigoValidacion");
+            if($('#code_input').val() == codigo){
+                $(window).attr('location','pantalla4.html')
+            }
+        });
+    });
 });
 
 var contador = new Number();
@@ -48,9 +57,9 @@ function Reenviar() {
         console.log(respuesta);
         console.log(respuesta.data);
         var code = respuesta.data;
-        localStorage.setItem("codigo", code);
-        var codigoStorage = localStorage.getItem("codigo");
-        alert("Su código es: " + codigoStorage);
+        localStorage.setItem("codigoValidacion", code);
+        var codigo = localStorage.getItem("codigoValidacion");
+        alert("Su código es: " + codigo);
         Disparar();
     })
     .fail(function(){
