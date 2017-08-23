@@ -34,6 +34,7 @@ function Disparar(){
     contador = 21;
   }
 };
+
 function Reenviar() {
     $.ajax({
         url: '/api/resendCode',
