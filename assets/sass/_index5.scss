@@ -1,0 +1,18 @@
+/*estilos pantalla 5*/
+#pantalla5{
+	background-color:#fbd43b;
+	height: 100vh;
+	font-weight: bold;
+	font-size: 1.3em;
+
+	.mensaje{
+		margin-top: 50%;
+
+		i{
+			border: solid 4px black;
+			border-radius: 100px;
+			margin-bottom: 20px;
+		}
+
+	}
+}
