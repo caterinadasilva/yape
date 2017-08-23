@@ -20258,12 +20258,57 @@ $(document).ready(function(){
     $('.carousel.carousel-slider').carousel({fullWidth: true});
 });
 $(document).ready(function() {
-	$.ajax({
+    $('#telephone').on("focus", function(){
+        $('#telephone').unbind('keyup change input paste').bind('keyup change input paste',function(e){
+            var $this = $(this);
+            var val = $this.val();
+            var valLength = val.length;
+            var maxCount = 9;
+            if(valLength == maxCount){
+                $this.val($this.val().substring(0,maxCount));
+                var num = $('#telephone').val();
+                $('#filled-in-box').removeAttr('disabled');
+                $("#filled-in-box").focus();
+                console.log("número ingresado: " + num);
+                localStorage.setItem("telefono", num);
+            }
+        });
+    });
+    $("#filled-in-box").on('change', function() {
+        if( $(this).is(':checked') ) {
+            $('#next-btn').removeAttr('disabled');
+            $("#next-btn").focus();
+        } else {
+            $('#next-btn').attr('disabled', 'true');
+        }
+    });
+
+    $('#next-btn').on('click', function(event) {
+        $.ajax({
+            url : '/api/registerNumber',
+            type : 'POST',
+            data : {
+                'phone' : num,
+                'terms' : 'true'
+            },
+        })
+        .done(function(respuesta){
+            console.log("success");
+            console.log(respuesta);
+        })
+        .fail(function(){
+            console.log("error");
+        });
+    });
+});
+var telefono = localStorage.getItem("telefono");
+$(document).ready(function() {
+    $.ajax({
         url : '/api/registerNumber',
         type : 'POST',
         data : {
-        	'phone' : '91781128',
-        	'terms' : 'true'
+            'phone' : telefono,
+            'terms' : 'true'
         },
     })
     .done(function(respuesta){
@@ -20273,4 +20318,44 @@ $(document).ready(function() {
     .fail(function(){
         console.log("error");
     });
+   
+    $('#numero').html(telefono);    
+    Reenviar();
+    Disparar();
 });
+
+var contador = new Number();
+var contador =  21;
+
+function Disparar(){
+  if((contador - 1) >= 0){
+    contador = contador -1;
+    $("#tiempo").text(contador);
+    setTimeout('Disparar();', 1000);
+  } else {
+    Reenviar();
+    contador = 21;
+  }
+};
+function Reenviar() {
+    $.ajax({
+        url: '/api/resendCode',
+        type: 'POST',
+        data: {'phone' : telefono,
+                'terms' : 'true'
+        }
+    })
+    .done(function(respuesta){
+        console.log("success");
+        console.log(respuesta);
+        console.log(respuesta.data);
+        var code = respuesta.data;
+        localStorage.setItem("codigo", code);
+        var codigoStorage = localStorage.getItem("codigo");
+        alert("Su código es: " + codigoStorage);
+        Disparar();
+    })
+    .fail(function(){
+        console.log("error");
+    });
+};
