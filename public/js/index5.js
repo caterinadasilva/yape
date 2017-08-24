@@ -1,15 +1,15 @@
 $(document).ready(function() {
-    Disparar();
+    CambioPag();
 });
 
 var contador = new Number();
 var contador =  3;
 
-function Disparar(){
+function CambioPag(){
   if((contador - 1) >= 0){
     contador = contador -1;
-    $("#tiempo").text(contador);
-    setTimeout('Disparar();', 1000);
+    console.log(contador);
+    setTimeout('CambioPag();', 1000);
   } else {
     $(window).attr('location','pantalla6.html')
   }
