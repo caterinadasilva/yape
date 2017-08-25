@@ -12,56 +12,79 @@
 </head>
 <body>
 <!--pantalla 6 maribel-->
-<div class="first container-fluid">
-<div class="row">
-		<div class="col s12">
+<div class="first container">
+	<div class="row">
+		<div class="col s12 ask">
 			<img src="img/icons/question.png">
 		</div>
 	</div>
 	<div class="row">
-		<div class="col s12 center-align">
+		<div class="col s12 center-align creditcard">
 			<img src="img/icons/bcp-logo.png">
 		</div>
 	</div>
 	<div class="row">
 		<div class="col s12 center-align">
-			<label>Regìstra tu tarjeta dèbito BCP</label><br>
-			<p>Por ahora solo aceptamos cuentas de ahorro</p>
-			<p>y/o corriente en soles.</p>
+			<h5>Registra tu tarjeta débito BCP</h5>
+			<p>Por ahora solo aceptamos cuentas de ahorro</br>
+			y/o corriente en soles.</p>
 		</div>
 	</div>
 </div>
 	<section class="escanear">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="input-field col s12 center-align">
-					<input type="text" id="autocomplete-input" class="autocomplete">
-					<label for="icon_card"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></label>
+					<i class="material-icons prefix">credit_card</i>
+					<input id="card_input" type="number" class="validate">
+					<label for="card_input">Ingrese su número de tarjeta</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col s5 rigth-align">
+				<div class="col s12 center-align scan">
                 <img src="img/icons/scan.png">
-                </div>
-                <div class="col s7 left-align">
-                <p>Escanear tarjeta</p>
+                <span>Escanear tarjeta</span>
                 </div>
 			</div>
-			<div class="row">
+			<div class="row fecha">
 				<div class="col s5">
 				   <label>Fecha de vencimiento</label>
 				</div>
 				  <div class="col s7">
-				  	<input type="text" class="datepicker fecha" placeholder="Mes"><p>/</p><input type="text" class="datepicker fecha" placeholder="Año">
+				  	<select name="mes" id="month_sel" disabled>
+				  		<option value="" disabled selected>Mes</option>
+						<option value="01">Enero</option>
+						<option value="02">Febrero</option>
+						<option value="03">Marzo</option>
+						<option value="04">Abril</option>
+						<option value="05">Mayo</option>
+						<option value="06">Junio</option>
+						<option value="07">Julio</option>
+						<option value="08">Agosto</option>
+						<option value="09">Septiembre</option>
+						<option value="10">Octubre</option>
+						<option value="11">Noviembre</option>
+						<option value="12">Diciembre</option>
+					</select>
+					<select name="año" id="year_sel" disabled>
+				  		<option value="" disabled selected>Año</option>
+						<option value="2017">2017</option>
+						<option value="2018">2018</option>
+						<option value="2019">2019</option>
+						<option value="2020">2020</option>
+						<option value="2021">2021</option>
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+						<option value="2024">2024</option>
+					</select>
 				  </div>
 			</div>
 			<div class="col s12 center-align">
-				<button class="btn waves-effect waves-light" type="submit" name="action">Continuar</button>
+				<button id="nxt-btn6" class="btn waves-effect waves-light" name="action" disabled>Continuar</button>
 			</div>
 		</div>
 	</section>
 	<!-- fin pantalla 6 maribel-->
-<script src="https://use.fontawesome.com/1370cbf9c0.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

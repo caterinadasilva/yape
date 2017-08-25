@@ -1,0 +1,46 @@
+.ask {
+	img {
+		float: right;
+		height: 50px;
+    	padding: 10px 0;
+	}
+}
+.creditcard {
+	img {
+		height: 100px;
+	}
+}
+.scan, .fecha {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	img {
+		height: 20px;
+		padding-right: 5px;
+	}
+	span {
+		color: #00c3a3;
+	}
+}
+.back {
+	display: flex;
+	align-items: center;
+	i {
+		padding: 5px 0;
+		font-size: 300%;
+	}
+}
+#month_sel, #year_sel {
+	display: block;
+	width: 50%;
+	float: left;
+}
+#nxt-btn6, #nxt-btn7 {
+	margin: 50px 0 0;
+}
+#cardkey_input {
+      font-size: 18px;
+      text-align: center;
+      padding: 3px 20px;
+      box-sizing: border-box;
+   }

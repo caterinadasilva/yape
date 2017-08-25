@@ -8,46 +8,46 @@
 	<meta name="description" content="Solución del Proyeto de Preparación para Talent Fest - Yape!">
 	<meta name="author" content="Squad Las Frescas">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="dist/css/style.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
 <!--pantalla 6 pass maribel-->
-<div class="pass container-fluid">
-<div class="row">
-		<div class="col s12">
-		    <span><i href="pantalla6.html" class="fa fa-arrow-left" aria-hidden="true"></i></span>
-		    <label>Volver</label>
-			<img src="public/img/icons/question.png">
+<div class="first container">
+	<div class="row">
+		<div class="col s6 back">
+			<i class="material-icons">keyboard_arrow_left</i>
+			<span>Volver</span>
+		</div>
+		<div class="col s6 ask">
+			<img src="img/icons/question.png">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 center-align creditcard">
+			<img src="img/icons/bcp-logo.png">
 		</div>
 	</div>
 	<div class="row">
 		<div class="col s12 center-align">
-			<img src="public/img/icons/bcp-logo.png">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col s12 center-align">
-			<label>Regìstra tu tarjeta dèbito BCP</label><br>
-			<p>Tarjeta****2363</p>
+			<h5>Ingrese la clave de su tarjeta</h5>
+			<p>Tarjeta <b>**** **** **** <span id="num-tarjeta"></span></b></p>
 		</div>
 	</div>
 </div>
 	<section class="ingreso pass">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="input-field col s12 center-align">
-					<input type="text" id="autocomplete-input" class="autocomplete">
-					<label for="icon_card"><img src="public/img/icons/lock.png"></label>
+		<div class="container">
+			<div class="input-field col s12 center-align">
+					<i class="material-icons prefix">lock_outline</i>
+					<input id="cardkey_input" type="password" class="validate" maxlength="4">
+					<label for="cardkey_input">Ingresa la clave de 4 dígitos</label>
 				</div>
-			</div>
 			<div class="row">
 				<div class="col s12 center-align">
-				<button class="btn waves-effect waves-light" type="submit" name="action">Registrar</button>
+				<button id="nxt-btn7" class="btn waves-effect waves-light" type="submit" name="action" disabled>Registrar</button>
 			    </div>
 			</div>
 		</div>
 	</section>
-<script src="https://use.fontawesome.com/1370cbf9c0.js"></script>
-<script src="dist/js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
